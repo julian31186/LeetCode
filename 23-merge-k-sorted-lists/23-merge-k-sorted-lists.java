@@ -16,8 +16,9 @@ class Solution {
         while(list.remove(null)) {}
         ListNode temp = head;
         
-        if(list.isEmpty()) return null;
+        //if(list.isEmpty()) return null;
                
+        
         while(!list.isEmpty()) {
             int min = Integer.MAX_VALUE;
             ListNode minNode = new ListNode();
@@ -38,6 +39,9 @@ class Solution {
             if(!list.isEmpty()) temp.next = new ListNode();
             temp = temp.next;  
         }
+        
+        if(temp == head) return null;
+        
         
         return head;
     }
