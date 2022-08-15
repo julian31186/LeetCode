@@ -1,26 +1,20 @@
 class Solution {
     public int reverse(int x) {
+        String num = String.valueOf(x);
+        String ans = "";
+        if(num.charAt(0) == '-') ans += num.charAt(0);
         
-        
-        String intToString = String.valueOf(x);
-        String reverse = "";
-        
-        if(intToString.charAt(0) == '-') {
-            reverse += "-";
-            intToString = intToString.substring(1);
+        for(int i = num.length()-1; i>= 0; i--) {
+            ans += num.charAt(i);
         }
-        for(int i = intToString.length()-1; i >= 0; i--) {
-            reverse += intToString.charAt(i);
-        }
-            
+        ans = ans.substring(0, num.length());
+        
         try {
-            return Integer.valueOf(String.valueOf(reverse));
-        } catch(NumberFormatException e) {
+           return Integer.valueOf(ans); 
+        } catch(Exception e) {
             return 0;
         }
         
-        
-    
     
     }
 }
