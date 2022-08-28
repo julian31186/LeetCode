@@ -24,7 +24,7 @@ class Solution {
        
         tail.next = head;
         tail = head;
-        for(int i = 1; i < rotatePoint; i++) {
+        while(rotatePoint-- > 1) {
             tail = tail.next;
         }
         
