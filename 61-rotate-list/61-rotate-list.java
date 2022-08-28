@@ -20,10 +20,11 @@ class Solution {
         }
         count++;
         int rotatePoint = count - k % count;
+        System.out.println(rotatePoint);
        
         tail.next = head;
         tail = head;
-        while(rotatePoint-- > 1) {
+        for(int i = 1; i < rotatePoint; i++) {
             tail = tail.next;
         }
         
