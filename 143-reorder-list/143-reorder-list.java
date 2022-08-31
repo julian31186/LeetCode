@@ -21,17 +21,16 @@ class Solution {
         node = head;
         
         while(node != null) {
-            ListNode next = node.next;
-           
-            
+            ListNode next = node.next;      
             ListNode endNode = stack.pop();
             
             node.next = endNode;
             endNode.next = next;
             node = next;
+            
             if(node != null && node.next == endNode) {
-            node.next = null;
-            break;
+                node.next = null;
+                break;
         }
             
             
