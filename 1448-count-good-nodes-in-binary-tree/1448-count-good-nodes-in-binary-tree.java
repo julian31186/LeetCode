@@ -14,22 +14,47 @@
  * }
  */
 class Solution {
-    public int goodNodes(TreeNode root) {
-        return countGoodNodes(root,root.val);
-    }
+    //retry RECURSIVE WAY
     
-    public int countGoodNodes(TreeNode root, int maxSoFar) {
-        int goodNodes = 0;        
-        if(root == null) return 0;
+    class NodePair {
+        TreeNode node = null;
+        int maxVal = 0;
         
-        if(root.val >= maxSoFar) {
-            maxSoFar = root.val;
-            goodNodes++;
+        
+        public NodePair(TreeNode node, int maxVal) {
+            this.node = node;
+            this.maxVal = maxVal;
         }
+    }
+
+    public int goodNodes(TreeNode root) {
+        int goodNodes = 0;
+        Stack<NodePair> stack = new Stack<>();
+        stack.push(new NodePair(root, root.val));
         
-        goodNodes += countGoodNodes(root.left, maxSoFar);
-        goodNodes += countGoodNodes(root.right, maxSoFar);
+        
+        while(!stack.isEmpty()) {
+            NodePair top = stack.pop();
+            TreeNode current = top.node;
+            int max =  top.maxVal; 
+            
+            if(current.val >= max) {
+                goodNodes++;
+                max = current.val;
+            }
+            
+            if(current.left != null) {
+                stack.push(new NodePair(current.left, max));
+            }
+            
+            if(current.right != null) {
+                stack.push(new NodePair(current.right, max));
+            }
+            
+        }
         
         return goodNodes;
     }
+   
+    
 }
