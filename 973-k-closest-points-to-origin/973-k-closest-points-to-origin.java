@@ -44,6 +44,5 @@ class Solution {
     .map(l -> l.stream().mapToInt(Integer::intValue).toArray())
     .toArray(int[][]::new);
         return arr;
-        
     }
 }
