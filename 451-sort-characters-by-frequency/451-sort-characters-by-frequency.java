@@ -10,13 +10,6 @@ class Solution {
         
     }
     public String frequencySort(String s) {
-        //hashmap of char and int
-        
-        //arraylist of pairs of hashmap keya and value
-        
-        //sort the array list by pair value
-        
-        //add to output string highest to lowest
         
         HashMap<Character,Integer> map = new HashMap<>();
         
