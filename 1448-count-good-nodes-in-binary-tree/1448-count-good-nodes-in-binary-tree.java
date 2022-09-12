@@ -14,10 +14,7 @@
  * }
  */
 class Solution {
-    //retry RECURSIVE WAY
     
-
-
     public int goodNodes(TreeNode root) {
         return countNodes(root,root.val);
     }
@@ -29,8 +26,7 @@ class Solution {
             goodNodes++;
             max = root.val;
         }
-        
-        
+
         goodNodes += countNodes(root.left, max);
         goodNodes += countNodes(root.right, max);
         
