@@ -20,7 +20,6 @@ class Solution {
 
     public int goodNodes(TreeNode root) {
         return countNodes(root,root.val);
-        //retry recursive DFS approach
     }
     
     public int countNodes(TreeNode root, int max) {
@@ -30,12 +29,13 @@ class Solution {
             goodNodes++;
             max = root.val;
         }
-            
+        
+        
         goodNodes += countNodes(root.left, max);
         goodNodes += countNodes(root.right, max);
-            
-            
+        
         return goodNodes;
+        
     }
     
     
