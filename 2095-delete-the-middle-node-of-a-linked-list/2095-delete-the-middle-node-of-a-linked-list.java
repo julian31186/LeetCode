@@ -24,8 +24,9 @@ class Solution {
         int j = count/2;
         trav = head;
         while(i < j - 1) {
-            trav = trav.next;
             i++;
+            trav = trav.next;
+            
         }
         
         trav.next = trav.next.next;
