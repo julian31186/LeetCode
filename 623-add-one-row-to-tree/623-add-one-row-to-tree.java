@@ -17,12 +17,14 @@ class Solution {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         
+        
         if (depth == 1) {
             TreeNode temp = root;
             root = new TreeNode(val);
             root.left = temp;
             return root;
         }
+        
         
         while(!queue.isEmpty()) {    
             int size = queue.size();
