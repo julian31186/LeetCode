@@ -10,6 +10,7 @@
  */
 class Solution {
     public ListNode deleteMiddle(ListNode head) {
+        if(head.next == null) return null;
         
         ListNode trav = head;
         int count = 0;
@@ -17,21 +18,15 @@ class Solution {
             count++;
             trav = trav.next;
         }
+        System.out.println(1/2);
         
-        if(count == 0 || count == 1) return null;
-        
-        int i = 0;
-        int j = count/2;
         trav = head;
-        while(i < j - 1) {
-            i++;
+        for(int i = 0; i < (count/2)- 1; i++) {
             trav = trav.next;
-            
         }
-        
         trav.next = trav.next.next;
         
-        return head;
         
+        return head;
     }
 }
