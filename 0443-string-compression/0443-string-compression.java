@@ -30,11 +30,6 @@ class Solution {
             i = j;
         }
         
-        int check = 0;
-        for(Pair p : list) {
-            if(p.amount == 1) check +=1;
-            else check +=2;
-        }
         
         int L = 0;
         for(int k = 0; k < list.size(); k++) {
