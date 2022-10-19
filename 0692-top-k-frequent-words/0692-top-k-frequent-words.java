@@ -26,7 +26,7 @@ class Solution {
             Pair pair = new Pair(entry.getKey(), entry.getValue());
             pqueue.add(pair);
         }
-        
+
         while(k > 0 && !pqueue.isEmpty()) {
             list.add(pqueue.remove().word);
             k--;
