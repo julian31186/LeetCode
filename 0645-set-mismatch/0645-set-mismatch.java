@@ -1,10 +1,8 @@
 class Solution {
     public int[] findErrorNums(int[] nums) {
         int[] ans = new int[2];
-        Arrays.sort(nums);
         HashSet<Integer> set = new HashSet<>();
-        int max = nums[nums.length-1];
-        
+
         for(int i = 0; i < nums.length; i++) {
             if(set.contains(nums[i])) {
                 ans[0] = nums[i];
